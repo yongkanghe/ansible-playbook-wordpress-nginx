@@ -27,3 +27,9 @@
   notify:
     - restart nginx
   become: yes
+
+- name: Remove default site
+  file: path=/etc/nginx/sites-enabled/default state=absent
+  notify:
+    - restart nginx
+  become: yes
